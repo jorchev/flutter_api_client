@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_api_rest/models/project.dart';
+import 'package:flutter_api_rest/screens/project_detail_screen.dart';
 import 'package:flutter_api_rest/services/project_service.dart';
 
 class ProjectListScreen extends StatefulWidget {
@@ -10,7 +11,7 @@ class ProjectListScreen extends StatefulWidget {
 }
 
 class _ProjectListScreenState extends State<ProjectListScreen> {
-  final PorjectService _projectService = PorjectService();
+  final ProjectService _projectService = ProjectService();
   late Future<List<Project>> _futureProjects;
 
   @override
@@ -65,7 +66,12 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
                     ],
                   ),
                   onTap: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProjectDetailScreen(projectId: project.id!)
+                      ) 
+                    );
                   },
                 );
               },

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_api_rest/models/project.dart';
 
-class PorjectService {
+class ProjectService {
   final String baseUrl = 'http://10.0.2.2:8000/api/projects';
 
   // Obtener todos los proyectos
