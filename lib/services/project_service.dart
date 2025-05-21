@@ -2,9 +2,16 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_api_rest/models/project.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ProjectService {
-  final String baseUrl = 'http://10.0.2.2:8000/api/projects';
+  
+  late final String baseUrl; 
+
+  ProjectService() {
+    final host = dotenv.env['API_HOST'] ?? 'http://10.0.2.2:8000/api';
+    baseUrl = '$host/projects'; // 10.0.2.2 - Mapeo del 127.0.0.1 del host en el emulador
+  }
 
   // Obtener todos los proyectos
   Future<List<Project>> getProjects() async {
