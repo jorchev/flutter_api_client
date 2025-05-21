@@ -39,7 +39,7 @@ class ProjectService {
       body: jsonEncode(project.toJson()),
     );
 
-    if (response.statusCode == 201) {
+    if (response.statusCode == 200) {
       return Project.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Failed to create project');
