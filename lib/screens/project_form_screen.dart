@@ -116,7 +116,7 @@ class _ProjectFormScreenState extends State<ProjectFormScreen> {
       }
 
       if(mounted) {
-        Navigator.of(context).pop();
+        Navigator.pop(context, true);
       }
 
     } catch (e) {
