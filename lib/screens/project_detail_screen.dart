@@ -61,6 +61,15 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                       fontWeight: FontWeight.bold,
                     )
                   ),
+                  const SizedBox(height: 6,),
+                  Text(
+                    project.description,
+                    textAlign: TextAlign.justify,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: Colors.black87
+                    ),
+                  ),
                   const SizedBox(height: 16,),
                   Text('Creado el: ${project.createdAt ?? "No disponible"}'),
                   Text('Última actualización: ${project.updatedAt ?? "No disponible"}'),
