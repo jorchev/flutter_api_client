@@ -75,7 +75,7 @@ class _ProjectFormScreenState extends State<ProjectFormScreen> {
                 },
               ),
               const SizedBox(height: 24,),
-              ElevatedButton(
+              FilledButton(
                 onPressed: () {
                   _isLoading ? null : _saveProject();
                 }, 
