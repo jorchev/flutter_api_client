@@ -90,7 +90,15 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-
+          final result = await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ProjectFormScreen(project: null,),
+            )
+          );
+          if (result == true) {
+            _refreshProjects();
+          }
         },
         child: const Icon(Icons.add),
       ),
