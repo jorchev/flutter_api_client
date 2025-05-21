@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_api_rest/models/project.dart';
+import 'package:flutter_api_rest/screens/project_form_screen.dart';
 import 'package:flutter_api_rest/services/project_service.dart';
 
 class ProjectDetailScreen extends StatefulWidget {
@@ -33,7 +34,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.edit),
-            onPressed: () {},
+            onPressed: () => _editProject(),
           )
         ],
       ),
@@ -70,5 +71,23 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
         },
       )
     );
+  }
+
+  Future<void> _editProject() async {
+    final project = await _projectService.getProject(widget.projectId);
+    if (mounted) {
+      final result = await Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProjectFormScreen(project: project),
+        )
+      );
+
+      if (result == true) {
+        setState(() {
+          _loadProject();
+        });
+      }
+    }
   }
 }
