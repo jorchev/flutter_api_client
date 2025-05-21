@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_api_rest/models/project.dart';
 import 'package:flutter_api_rest/screens/project_detail_screen.dart';
+import 'package:flutter_api_rest/screens/project_form_screen.dart';
 import 'package:flutter_api_rest/services/project_service.dart';
 
 class ProjectListScreen extends StatefulWidget {
@@ -54,7 +55,15 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
                       IconButton(
                         icon: const Icon(Icons.edit), 
                         onPressed: () async {
-
+                          final result = await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProjectFormScreen(project: project),
+                            )
+                          );
+                          if (result == true) {
+                            _refreshProjects();
+                          }
                         },
                       ),
                       IconButton(
