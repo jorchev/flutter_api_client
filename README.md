@@ -1,16 +1,8 @@
-# flutter_api_rest
+# flutter_api_client
 
-A new Flutter project.
+Cliente en Flutter para consumir API Rest.
 
-## Getting Started
+## Acerca del proyecto
 
-This project is a starting point for a Flutter application.
+Proyecto desarrollado como un ejemplo de un aplicación móvil utilizando el framework de Flutter, con la finalidad de explorar como se consume una API desde este entorno de desarrollo, este proyecto es solo para fines de mostrativos de la clase de desarrollo de aplicaciones móviles para Android.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
