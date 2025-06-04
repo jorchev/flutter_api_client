@@ -1,6 +1,6 @@
 # flutter_api_client
 
-Cliente en Flutter para consumir API Rest.
+Cliente en Flutter para consumir una API Rest.
 
 ## Acerca del proyecto
 
